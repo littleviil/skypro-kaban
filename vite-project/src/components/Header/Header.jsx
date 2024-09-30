@@ -7,10 +7,22 @@ export const Header = ({addCard}) =>{
 	const toggleOpenUser = () =>{
 		setIsOpen(!isOpen)
 	}
-	 const toggleDarkTheme = ()=>{
+	 const toggleDarkTheme = () => {
 		setIsDark(!isDark)
 		console.log(!isDark)
-	 }
+
+		let isStyle1 = true;
+
+        document.getElementById('styleToggle').onclick = function() {
+            const stylesheet = document.getElementById('stylesheet');
+            if (isStyle1) {
+                stylesheet.setAttribute('href', 'App.css');
+            } else {
+                stylesheet.setAttribute('href', 'MainDark.css');
+            }
+            isStyle1 = !isStyle1;
+        };
+	}
     return(<header className="header">
 			<div className="container">
 				<div className="header__block">
@@ -32,7 +44,7 @@ export const Header = ({addCard}) =>{
 							<p className="pop-user-set__mail">ivan.ivanov@gmail.com</p>
 							<div className="pop-user-set__theme">
 								<p>Темная тема</p>
-								<input onClick={toggleDarkTheme} type="checkbox" className="checkbox" name="checkbox"/>
+								<input onClick={toggleDarkTheme} type="checkbox" className="checkbox" name="checkbox" id="styleToggle"/>
 							</div>
 							<button type="button" className="_hover03"><a href="#popExit">Выйти</a></button>
 						</div>
