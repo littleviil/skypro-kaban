@@ -15,5 +15,5 @@ export const Column = ({title, cards})=>{
 								))}	
 							</div>
 						</div>	
-    )
-}
+    );
+};

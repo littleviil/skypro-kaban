@@ -1,19 +1,24 @@
-import Column from "../Column/Column";
+import { Column } from "../Column/Column"
+import { statusList } from "../../date"
 
-export const Main = () => {
-  return (
-    <main className="main">
-      <div className="container">
-        <div className="main__block">
-          <div className="main__content">
-            <Column title={`Без статуса`} />
-            <Column title={`Нужно сделать`} />
-            <Column title={`В работе`} />
-            <Column title={`Тестирование`} />
-            <Column title={`Готово`} />
-          </div>
-        </div>
-      </div>
-    </main>
-  );
-};
+export const Main = ({cards})=>{
+    return(
+      <main className="main">
+			<div className="container">
+				
+				<div className="main__block">
+					<div className="main__content">
+						{statusList.map((status, id)=>(
+							<Column 
+							key={id}
+							title={status} 
+							cards={cards.filter((card) =>(card.status === status))}
+							/>
+						))}													
+					</div>
+				
+				</div>
+			</div>
+		</main>
+    );
+} ;

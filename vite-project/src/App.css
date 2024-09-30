@@ -776,7 +776,9 @@ body {
 .header__btn-main-new a {
   color: #FFFFFF;
 }
+
 .header__user {
+  min-width: 83.5px;
   height: 20px;
   display: flex;
   flex-wrap: nowrap;
@@ -1125,10 +1127,6 @@ body {
   a:nth-of-type(2) .logo {
     animation: logo-spin infinite 20s linear;
   }
-}
-
-.card {
-  padding: 2em;
 }
 
 .read-the-docs {
