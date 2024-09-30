@@ -4,6 +4,7 @@ import { PopNewCard } from "./components/popups/PopNewCard/PopNewCard";
 import { PopBrowse } from "./components/popups/PopBrowse/PopBrowse";
 import { Header } from "./components/Header/Header";
 import { Main } from "./components/Main/Main";
+import { Column } from "./components/Column/Column";
 
 import "./App.css";
 

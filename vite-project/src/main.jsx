@@ -1,9 +1,25 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import App from "./App.jsx";
+import { Wrapper } from "./components/Wrapper/Wrapper";
+import { PopExit } from "./components/popups/PopExit/PopExit";
+import { PopNewCard } from "./components/popups/PopNewCard/PopNewCard";
+import { PopBrowse } from "./components/popups/PopBrowse/PopBrowse";
+import { Header } from "./components/Header/Header";
+import { Main } from "./components/Main/Main";
 
-ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+import "./App.css";
+
+function App() {
+  return (
+    <>
+      <Wrapper>
+        <PopExit />
+        <PopNewCard />
+        <PopBrowse />
+        <Header />
+        <Main />
+      </Wrapper>
+      <script src="js/script.js"></script>
+    </>
+  );
+}
+
+export default App;
