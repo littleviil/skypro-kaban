@@ -1,4 +1,25 @@
-main.css
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.loader{
+  margin-top: 100px;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
 * {
   margin: 0;
   padding: 0;
@@ -755,7 +776,9 @@ body {
 .header__btn-main-new a {
   color: #FFFFFF;
 }
+
 .header__user {
+  min-width: 83.5px;
   height: 20px;
   display: flex;
   flex-wrap: nowrap;
@@ -778,7 +801,7 @@ body {
   padding: 0;
 }
 .header__pop-user-set {
-  display: none;
+  display: block;
   position: absolute;
   top: 61px;
   right: 0;
@@ -805,6 +828,7 @@ body {
 .main__content {
   width: 100%;
   display: flex;
+  gap: 12px;
 }
 .main__column {
   width: 20%;
@@ -822,6 +846,7 @@ body {
   font-weight: 600;
   line-height: 1;
   text-transform: uppercase;
+  text-align: start;
 }
 
 .cards {
@@ -1087,4 +1112,23 @@ body {
   .pop-exit__form-group {
     display: block;
   }
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.read-the-docs {
+  color: #888;
 }
