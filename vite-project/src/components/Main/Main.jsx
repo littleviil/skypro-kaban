@@ -1,5 +1,5 @@
 import { Column } from "../Column/Column"
-import { statusList } from "../../data"
+import { cardList } from "../../data"
 
 export const Main = ({cards})=>{
     return(
@@ -8,7 +8,7 @@ export const Main = ({cards})=>{
 				
 				<div className="main__block">
 					<div className="main__content">
-						{statusList.map((status, id)=>(
+						{cardList.map((status, id)=>(
 							<Column 
 							key={id}
 							title={status} 
