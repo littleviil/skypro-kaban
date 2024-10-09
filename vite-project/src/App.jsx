@@ -6,6 +6,9 @@ import { PopNewCard } from './components/PopNewCard/PopNewCard'
 import { PopBrowse } from './components/PopBrowse/PopBrowse'
 import { PopExit } from './components/PopExit/PopExit'
 import { cardList } from './data'
+import { GlobalStyle } from './global.styled.js';
+import { ThemeProvider } from 'styled-components';
+import { dark, light } from './theme.js';
 
 function App() {
 
@@ -33,6 +36,8 @@ function App() {
 
   return (
      <>
+     <ThemeProvider theme = {changeTheme === "light" ? light : dark}>
+     <GlobalStyle />
      <div className="wrapper">
 			<PopExit/>
 			<PopNewCard/>
@@ -42,6 +47,7 @@ function App() {
         <Main cards={cards}/>
       };
     </div>
+    </ThemeProvider>
     </>
   );
 };
