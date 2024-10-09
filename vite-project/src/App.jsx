@@ -1,50 +1,50 @@
-import { useEffect, useState } from 'react'
-import './App.css'
-// import './MainDark.css'
-import { Header } from './components/Header/Header'
-import { Main } from './components/Main/Main'
-import { PopNewCard } from './components/PopNewCard/PopNewCard'
-import { PopBrowse } from './components/PopBrowse/PopBrowse'
-import { PopExit } from './components/PopExit/PopExit'
-import { cardList } from './date'
+import "./App.css";
+import Header from "./components/Header/Header";
+import Main from "./components/Main/Main";
+import PopBrowse from "./components/PopBrowse/PopBrowse";
+import PopNewCard from "./components/PopNewCard/PopNewCard";
+import Wrapper from "./components/Wrapper/Wrapper";
+import { useState } from "react";
+import { cardList } from "./data";
+import { useEffect } from "react";
+import { GlobalStyle } from "./global.styled";
 
 function App() {
-
   const [cards, setCards] = useState(cardList);
-  const [isLoading, setIsLoading] = useState(false);
-
-  const addCard = () => {
-     const newCard = {
-      id:  cards.length + 1,
-      topic:"Web Design" ,
-      title:"Новая задача",
-      date: "8.06.24",
-      status:"Без статуса",
-     };
-     setCards([...cards, newCard])
-  };
+  const [isLoaded, setIsLoaded] = useState(true);
 
   useEffect(() => {
-      setIsLoading(true)
-      setTimeout(() => {
-      setIsLoading(false)
-    }, 1500);
-  
+    setTimeout(() => {
+      setIsLoaded((isLoaded) => {
+        !isLoaded;
+      });
+    }, 2000);
   }, []);
 
+  function addCard() {
+    setCards([
+      ...cards,
+      {
+        id: cards.length + 1,
+        theme: "test",
+        title: "test",
+        date: "30.10.23",
+        status: "Тестирование",
+      },
+    ]);
+  }
+
   return (
-     <>
-     <div className="wrapper">
-			<PopExit/>
-			<PopNewCard/>
-			<PopBrowse/>
-		  <Header addCard={addCard}/>
-      {isLoading? <img className='loader' src="public/loading.gif" alt="" /> : 	 
-        <Main cards={cards}/>
-      };
-    </div>
+    <>
+      <GlobalStyle />
+      <Wrapper>
+        <PopNewCard />
+        <PopBrowse />
+        <Header addCard={addCard} />
+        <Main cardList={cards} isLoaded={isLoaded} />
+      </Wrapper>
     </>
   );
-};
+}
 
-export default App
+export default App;
