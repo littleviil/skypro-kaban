@@ -1,12 +1,11 @@
 import { useEffect, useState } from 'react'
 import './App.css'
-// import './MainDark.css'
 import { Header } from './components/Header/Header'
 import { Main } from './components/Main/Main'
 import { PopNewCard } from './components/PopNewCard/PopNewCard'
 import { PopBrowse } from './components/PopBrowse/PopBrowse'
 import { PopExit } from './components/PopExit/PopExit'
-import { cardList } from './date'
+import { cardList } from './data'
 
 function App() {
 

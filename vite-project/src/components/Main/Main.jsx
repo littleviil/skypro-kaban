@@ -1,5 +1,5 @@
 import { Column } from "../Column/Column"
-import { statusList } from "../../date"
+import { statusList } from "../../data"
 
 export const Main = ({cards})=>{
     return(
