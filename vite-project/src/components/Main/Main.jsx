@@ -1,24 +1,30 @@
-import { Column } from "../Column/Column"
-import { cardList } from "../../data"
+import Column from "../Column/Column";
+import { statusList } from "../../data";
+import { Container } from "../Common/Common.styled";
+import { MainContainer } from "./Main.styled";
+import { MainBlock } from "./Main.styled";
+import { MainContent } from "./Main.styled";
 
-export const Main = ({cards})=>{
-    return(
-      <main className="main">
-			<div className="container">
-				
-				<div className="main__block">
-					<div className="main__content">
-						{cardList.map((status, id)=>(
-							<Column 
-							key={id}
-							title={status} 
-							cards={cards.filter((card) =>(card.status === status))}
-							/>
-						))}													
-					</div>
-				
-				</div>
-			</div>
-		</main>
-    );
-} ;
+function Main({cardList , isLoaded}) {
+  return (
+    <MainContainer>
+      <Container>
+        <MainBlock>
+          <MainContent>
+              { isLoaded? "Данные загружаются" : statusList.map((status)=> 
+                 <Column 
+                 key={status}
+                 title={status} 
+                 cardList={cardList.filter((card) => card.status === status)}
+                 />
+              )
+              }
+            
+          </MainContent>
+        </MainBlock>
+      </Container>
+    </MainContainer>
+  );
+}
+
+export default Main;

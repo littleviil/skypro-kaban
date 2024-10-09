@@ -38,6 +38,8 @@ export const ButtonHeader = styled.button`
   line-height: 1;
   font-weight: 500;
   margin-right: 20px;
+  height: 30px;
+  width: 178px;
 
   &:hover {
     background-color: #33399b;
