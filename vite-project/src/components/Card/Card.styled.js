@@ -47,6 +47,7 @@ export const CardGroup = styled.div`
   align-items: center;
   justify-content: space-between;
 `;
+
 export const CardText = styled.p`
   font-size: 10px;
   font-weight: 600;

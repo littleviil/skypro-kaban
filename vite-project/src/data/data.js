@@ -1,42 +1,80 @@
 export const cardList = [
-    {
-      id: 1,
-      theme: "Web Design",
+  {
+      id: 1.1,
       title: "Название задачи",
-      date: "30.10.23",
+      topic: "Web Design",
+      date: "10.05.2024",
       status: "Без статуса",
-    },
-  
-    {
+  },
+  {
+      id: 1.2,
+      title: "Название задачи",
+      topic: "Research",
+      date: "10.05.2024",
+      status: "Без статуса",
+  },
+  {
+      id: 1.3,
+      title: "Название задачи",
+      topic: "Web Design",
+      date: "10.05.2024",
+      status: "Без статуса",
+  },
+  {
+      id: 1.4,
+      title: "Название задачи",
+      topic: "Research",
+      date: "10.05.2024",
+      status: "Без статуса",
+  },
+  {
       id: 2,
-      theme: "Research",
-      title: "Новая задача",
-      date: "30.10.23",
-      status: "Без статуса",
-    },
-  
-    {
-      id: 3,
-      theme: "Research",
-      title: "Нужно сделать",
-      date: "30.10.23",
+      title: "Название задачи",
+      topic: "Research",
+      date: "10.05.2024",
       status: "Нужно сделать",
-    },
-  
-    {
-      id: 4,
-      theme: "Copywriting",
-      title: "Новая задача",
-      date: "30.10.23",
+  },
+  {
+      id: 3.1,
+      title: "Название задачи",
+      topic: "Research",
+      date: "10.05.2024",
       status: "В работе",
-    },
-  ];
+  },
+  {
+      id: 3.2,
+      title: "Название задачи",
+      topic: "Copywriting",
+      date: "10.05.2024",
+      status: "В работе",
+  },
+  {
+      id: 3.3,
+      title: "Название задачи",
+      topic: "Web Design",
+      date: "10.05.2024",
+      status: "В работе",
+  },
+  {
+      id: 4,
+      title: "Название задачи",
+      topic: "Research",
+      date: "10.05.2024",
+      status: "Тестирование",
+  },
+  {
+      id: 5,
+      title: "Название задачи",
+      topic: "Research",
+      date: "10.05.2024",
+      status: "Готово",
+  },
+];
   
   export const statusList = [
       "Без статуса",
       "Нужно сделать",
       "В работе",
       "Тестирование",
-      "Готово",
-      
+      "Готово",  
     ];
