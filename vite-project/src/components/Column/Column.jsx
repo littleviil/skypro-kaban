@@ -1,26 +1,25 @@
+import * as S from "./Column.styled.js";
 import Card from "../Card/Card";
-import { Cards, MainColumn } from "./Column.styled";
-import { ColumnTitle } from "./Column.styled";
-import { ColumnTitleP } from "./Column.styled";
 
-function Column({ title, cardList }) {
+const Column = ({title, cards }) => {
   return (
-    <MainColumn>
-      <ColumnTitle>
-        <ColumnTitleP>{title}</ColumnTitleP>
-      </ColumnTitle>
-      <Cards>
-        {cardList.map((card) => (
-          <Card
-            key={card.id}
-            theme={card.theme}
-            name={card.title}
-            date={card.date}
-          />
-        ))}
-      </Cards>
-    </MainColumn>
+    <>
+      <S.MainColumn>
+        <S.ColumnTitle>
+          <S.ColumnText>{title}</S.ColumnText>
+        </S.ColumnTitle>
+            <S.Cards>
+              {cards.map(({id, topic, title, date}) => (
+                    <Card 
+                    key = {id} 
+                    topic = {topic} 
+                    title = {title} 
+                    date = {date}/>
+              ))}
+            </S.Cards>
+      </S.MainColumn>
+    </>
   );
-}
+};
 
 export default Column;

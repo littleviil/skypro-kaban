@@ -1,29 +1,21 @@
-import { PopExitContainerMain , PopExitContainer ,PopExitBlock , PopExitTtl, PopExitForm, PopExitFormGroup, PopExitExitYes, PopExitExitNo } from "./PopExit.styled";
-import { PopExItTtlH2 } from "./PopExit.styled";
+import * as S from "../PopExit/PopExit.styled.js";
 
-
-function PopExit() {
+const PopExit = () => {
     return (
-        <PopExitContainerMain>
-        <PopExitContainer>
-          <PopExitBlock>
-            <PopExitTtl>
-              <PopExItTtlH2>Выйти из аккаунта?</PopExItTtlH2>
-            </PopExitTtl>
-            <PopExitForm>
-              <PopExitFormGroup>
-                <PopExitExitYes>
-                  Да, выйти
-                </PopExitExitYes>
-                <PopExitExitNo>
-                  Нет, остаться
-                </PopExitExitNo>
-              </PopExitFormGroup>
-            </PopExitForm>
-          </PopExitBlock>
-        </PopExitContainer>
-      </PopExitContainerMain>
-    )
-}
+        <S.PopExit>
+            <S.PopExitContainer>
+                <S.PopExitBlock>
+                        <S.PopExitTitle>Выйти из аккаунта?</S.PopExitTitle>
+                    <S.PopExitForm action="#">
+                        <S.PopExitFormGroup>
+                            <S.PopExitYes>Да, выйти</S.PopExitYes>
+                            <S.PopExitNo>Нет, остаться</S.PopExitNo>
+                        </S.PopExitFormGroup>
+                    </S.PopExitForm>
+                </S.PopExitBlock>
+            </S.PopExitContainer>
+        </S.PopExit>
+    );
+};
 
 export default PopExit;

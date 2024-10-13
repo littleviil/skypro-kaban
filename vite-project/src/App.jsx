@@ -1,50 +1,38 @@
-import "./App.css";
-import Header from "./components/Header/Header";
+import Header from "./components/Header/Header/";
 import Main from "./components/Main/Main";
-import PopBrowse from "./components/PopBrowse/PopBrowse";
-import PopNewCard from "./components/PopNewCard/PopNewCard";
-import Wrapper from "./components/Wrapper/Wrapper";
 import { useState } from "react";
-import { cardList } from "./data";
-import { useEffect } from "react";
+import { cardList } from "./data/data.js";
 import { GlobalStyle } from "./global.styled";
+import { ThemeProvider } from "styled-components";
+import { dark, light } from "././theme.js";
 
 function App() {
-  const [cards, setCards] = useState(cardList);
-  const [isLoaded, setIsLoaded] = useState(true);
+	const [cards, setCards] = useState(cardList);
+	const [isDarkTheme, setIsDarkTheme] = useState("light");
 
-  useEffect(() => {
-    setTimeout(() => {
-      setIsLoaded((isLoaded) => {
-        !isLoaded;
-      });
-    }, 2000);
-  }, []);
+	const onAddCard = () => {
+		console.log("add card");
 
-  function addCard() {
-    setCards([
-      ...cards,
-      {
-        id: cards.length + 1,
-        theme: "test",
-        title: "test",
-        date: "30.10.23",
-        status: "Тестирование",
-      },
-    ]);
-  }
-
-  return (
-    <>
-      <GlobalStyle />
-      <Wrapper>
-        <PopNewCard />
-        <PopBrowse />
-        <Header addCard={addCard} />
-        <Main cardList={cards} isLoaded={isLoaded} />
-      </Wrapper>
-    </>
-  );
+		const newCard = {
+		  id: Date.now(),
+		  title: "Новая задача",
+		  topic: "Без темы",
+		  date: "10.05.2024",
+		  status: "Без статуса",
+		}
+		setCards([...cards, newCard]);
+	  };
+	
+	return (
+		<ThemeProvider theme={isDarkTheme === "light" ? light : dark}>
+		<GlobalStyle/>
+			<Header onAddCard={onAddCard} setIsDarkTheme={setIsDarkTheme} isDarkTheme={isDarkTheme}/>
+			<Main cards={cards}/>
+			{/* <PopBrowse/> */}
+        {/* <PopUser /> */}
+    </ThemeProvider>
+	);
+	
 }
 
 export default App;

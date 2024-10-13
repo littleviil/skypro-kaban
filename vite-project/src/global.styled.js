@@ -73,8 +73,6 @@ export const Hover03 = css`
 }
 `;
 
-
-// Функция для применения стилей
 export const themeColor = ($color) => css`
   ${$color === "Web Design" && css`
   background-color: ${({ theme }) => theme.colors.orangeBg};
