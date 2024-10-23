@@ -4,7 +4,7 @@ const NotFoundPage = () => {
     return (
      <NotFoundStyle>
        <img
-         src="https://enx2marketing.com/wp-content/uploads/redirected-url.png"
+         src=".\images\404.png"
          alt="Страница не найдена"
        />
      </NotFoundStyle>
