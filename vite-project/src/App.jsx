@@ -1,38 +1,17 @@
-import Header from "./components/Header/Header/";
-import Main from "./components/Main/Main";
-import { useState } from "react";
-import { cardList } from "./data/data.js";
 import { GlobalStyle } from "./global.styled";
 import { ThemeProvider } from "styled-components";
 import { dark, light } from "././theme.js";
+import AppRoutes from './AppRoutes.jsx';
+import {useState} from "react";
 
 function App() {
-	const [cards, setCards] = useState(cardList);
-	const [isDarkTheme, setIsDarkTheme] = useState("light");
-
-	const onAddCard = () => {
-		console.log("add card");
-
-		const newCard = {
-		  id: Date.now(),
-		  title: "Новая задача",
-		  topic: "Без темы",
-		  date: "10.05.2024",
-		  status: "Без статуса",
-		}
-		setCards([...cards, newCard]);
-	  };
-	
+	const [isDarkTheme, setDarkTheme] = useState(false);
 	return (
-		<ThemeProvider theme={isDarkTheme === "light" ? light : dark}>
-		<GlobalStyle/>
-			<Header onAddCard={onAddCard} setIsDarkTheme={setIsDarkTheme} isDarkTheme={isDarkTheme}/>
-			<Main cards={cards}/>
-			{/* <PopBrowse/> */}
-        {/* <PopUser /> */}
-    </ThemeProvider>
-	);
-	
+        <ThemeProvider theme={isDarkTheme === "light" ? light : dark}>
+            <GlobalStyle/>
+            <AppRoutes darkTheme={isDarkTheme} setDarkTheme={setDarkTheme}/>
+        </ThemeProvider>
+    );
 }
 
-export default App;
+export default App

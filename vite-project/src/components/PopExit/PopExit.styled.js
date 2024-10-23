@@ -1,4 +1,4 @@
-import { Hover01, Hover03 } from "../../glogal.styled";
+import { Hover01, Hover03 } from "../../global.styled";
 import styled from "styled-components";
 
 export const PopExit = styled.div`
