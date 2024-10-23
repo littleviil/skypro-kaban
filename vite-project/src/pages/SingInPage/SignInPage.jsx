@@ -1,6 +1,6 @@
 import { Link, useNavigate } from 'react-router-dom'
 import { routesPages } from '../../lib/routes';
-import * as S from "./SignInPage.styled"
+import * as S from "./SignInPage.styled";
 
 function SignInPage({setIsAuth}) {
     const navigate = useNavigate()
@@ -9,7 +9,7 @@ function SignInPage({setIsAuth}) {
         event.preventDefault();
         // Обработка формы...
         setIsAuth(true)
-        navigate(routesPages.MAIN); // Перенаправление на другую страницу
+        navigate(routesPages.MAIN); 
       }
 
   return (

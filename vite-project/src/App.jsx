@@ -5,6 +5,7 @@ import { cardList } from "./data/data.js";
 import { GlobalStyle } from "./global.styled";
 import { ThemeProvider } from "styled-components";
 import { dark, light } from "././theme.js";
+import AppRoutes from './AppRoutes.jsx';
 
 function App() {
 	const [cards, setCards] = useState(cardList);
@@ -26,6 +27,7 @@ function App() {
 	return (
 		<ThemeProvider theme={isDarkTheme === "light" ? light : dark}>
 		<GlobalStyle/>
+		<AppRoutes/>
 			<Header onAddCard={onAddCard} setIsDarkTheme={setIsDarkTheme} isDarkTheme={isDarkTheme}/>
 			<Main cards={cards}/>
 			{/* <PopBrowse/> */}

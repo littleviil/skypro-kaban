@@ -55,7 +55,7 @@ const PopBrowse = () => {
                             <S.ButtonChangeDelete>Редактировать задачу</S.ButtonChangeDelete>
                     <S.ButtonChangeDelete>Удалить задачу</S.ButtonChangeDelete>
                             </div>
-                            <button className="btn-browse__close _btn-bg _hover01"><a href="#">Закрыть</a></button>
+                            <button className="btn-browse__close _btn-bg _Hover01"><a href="#">Закрыть</a></button>
                         </div>
                         <div className="pop-browse__btn-edit _hide">
                             <div className="btn-group">

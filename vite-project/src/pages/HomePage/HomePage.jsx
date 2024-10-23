@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import Header from '../../components/Header/Header';
 import Main from '../../components/Main/Main';
-import { cardList } from '../../Data';
+import { cardList } from '../../data/data';
 // import PopNewCard from '../../components/PopNewCard/PopNewCard';
 import { Outlet } from 'react-router-dom';
 
@@ -13,19 +13,19 @@ export default function HomePage({setIsAuth}) {
           setIsLoading(false);
         }, 2000)
       }, []);
-    function addCard () {
-        const newTask = {
-          id: cards.length + 1,
-          topic: "Web Design",
-          title: "Название задачи",
-          date: "27.06.24",
-          status: "Без статуса",
-        }
-        setCards([...cards, newTask]);
-    }
+    const onAddCard = () => {
+		const newCard = {
+		  id: Date.now(),
+		  title: "Новая задача",
+		  topic: "Без темы",
+		  date: "10.05.2024",
+		  status: "Без статуса",
+		}
+		setCards([...cards, newCard]);
+	};
     return (
         <>
-            <Header setIsAuth={setIsAuth} />
+            <Header setIsAuth={setIsAuth} onAddCard={onAddCard} />
                 {isLoading ? <h1 className='load'>Данные загружаются...</h1> : <Main cardList={cards} />}
             <Outlet />
         </>

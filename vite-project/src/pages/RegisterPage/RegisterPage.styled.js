@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { hover01 } from "../../components/Common/Common.styled";
+import { Hover01 } from "../../global.styled";
 
 export const RegisterWrapper = styled.div`
     width: 100%;
@@ -129,7 +129,7 @@ export const ModalBtnSignupEnt = styled.button`
     justify-content: center;
   }
 
-  ${hover01}
+  ${Hover01}
 
   @media screen and (max-width: 375px) {    
       height: 40px; 

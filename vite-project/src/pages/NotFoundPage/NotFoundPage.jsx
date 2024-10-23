@@ -1,4 +1,4 @@
-import { NotFoundStyle } from "./NotFound.styled";
+import { NotFoundStyle } from "./NotFoundPage.styled";
 
 const NotFoundPage = () => {
     return (
@@ -11,4 +11,4 @@ const NotFoundPage = () => {
    );
  }
 
- export default NotFoundPage
+ export default NotFoundPage;
