@@ -46,7 +46,7 @@ export const Header = ({ onAddCard, isDarkTheme, setIsDarkTheme }) => {
                           <L.PopUserSetMail>ivan.ivanov@gmail.com</L.PopUserSetMail>
                           <L.PopUserSetTheme>
                             <p>Темная тема</p>
-                            <input checked={isDarkTheme === "dark"} onClick={onChangeTheme} type="checkbox" className="checkbox" name="checkbox" />
+                            <input checked={isDarkTheme === "dark"} onChange={onChangeTheme} type="checkbox" className="checkbox" name="checkbox" />
                           </L.PopUserSetTheme>
                           <L.HeaderBtnExit onClick={clickOnExit}>
                             <a>Выйти</a>

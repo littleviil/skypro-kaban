@@ -26,7 +26,7 @@ export default function HomePage({setIsAuth}) {
     return (
         <>
             <Header setIsAuth={setIsAuth} onAddCard={onAddCard} />
-                {isLoading ? <h1 className='load'>Данные загружаются...</h1> : <Main cardList={cards} />}
+                {isLoading ? <h1 className='load'>Данные загружаются...</h1> : <Main cards={cards} />}
             <Outlet />
         </>
     )
